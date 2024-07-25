@@ -1,0 +1,10 @@
+ul{
+    display: flex;
+    flex-direction: column;
+}
+a{
+    color: white;
+}
+a:hover{
+    color: hsl(41, 62%, 58%);
+}

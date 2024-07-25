@@ -1,1 +1,43 @@
-<p>drawer works!</p>
+<div class="add">
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav [(opened)]="opened" mode="over">
+            <nav>
+                <p>Upload Book</p>
+                <span id="cross" (click)="sidenav.close()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></span>
+            </nav>
+
+            <div class="bin">
+                <div class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e8eaed"><path d="M319-250h322v-60H319v60Zm0-170h322v-60H319v60ZM220-80q-24 0-42-18t-18-42v-680q0-24 18-42t42-18h361l219 219v521q0 24-18 42t-42 18H220Zm331-554v-186H220v680h520v-494H551ZM220-820v186-186 680-680Z"/></svg></div>
+                <div class="first-line">Drop PDF here</div>
+                <div class="or">or</div>
+                <div class="folder">
+                    <div class="upload">Upload <span id="draft"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg></span></div>
+                </div>
+            </div>
+
+            <div class="input">
+
+                      <label for="bname">Book Name</label>
+                      
+                        <mat-form-field class="example-full-width" appearance="fill">
+                          <!-- <mat-label>Message</mat-label> -->
+                          <input matInput #message maxlength="256" placeholder="Enter book name...">
+                        </mat-form-field>
+                      
+                      <!-- <input required type="text" id="bname" name="Bookname" > -->
+                  
+                      <label for="Aname">Author Name</label>
+                      <input matInputrequired type="text" id="Aname" name="Authorname" >
+                  
+                      <!-- <input type="submit" value="Submit"> -->
+
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <button (click)="sidenav.toggle()">Add +</button>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+
+  
+  

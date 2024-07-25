@@ -11,7 +11,6 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
-import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared.module';
 import { BooksComponent } from './books/books.component';
@@ -26,7 +25,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { DataService } from './services/data.service';
 import { UsersDataSource } from './services/Users.dataSource';
 import { DrawerComponent } from './drawer/drawer.component';
-
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,10 @@ import { DrawerComponent } from './drawer/drawer.component';
     HttpClientModule,
     MatPaginatorModule,
     MatSortModule,
+    MatTabsModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [
     provideClientHydration(),

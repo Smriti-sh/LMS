@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; 
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
     display: ruby-text;
     background-color: rgb(41, 41, 41);
@@ -12,11 +13,11 @@ h1{
     font-family: 'lato', 'arial', sans-serif;
 }
 a{
-    color: aliceblue;
+    color: rgb(2, 3, 3);
     text-decoration: none;
 }
 a:hover{
-    color: rgb(214, 172, 81);
+    color: hsl(41, 62%, 58%);
 }
 li::marker {
     color: rgb(214, 172, 81);
