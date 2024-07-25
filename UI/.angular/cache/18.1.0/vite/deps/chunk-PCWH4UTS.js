@@ -1,46 +1,45 @@
-import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   Overlay,
   OverlayModule
-} from "./chunk-XIVIOHUL.js";
+} from "./chunk-NXX7W44F.js";
 import {
   animate,
   state,
   style,
   transition,
   trigger
-} from "./chunk-2DIXYZV2.js";
+} from "./chunk-7RIIXCLX.js";
 import {
   MatCommonModule
-} from "./chunk-SAKBDCZR.js";
+} from "./chunk-LZI7LWQU.js";
 import {
   ComponentPortal
-} from "./chunk-O2OK6YUU.js";
+} from "./chunk-DH6TAW5A.js";
 import {
   A11yModule,
   AriaDescriber,
   ESCAPE,
   FocusMonitor,
   hasModifierKey
-} from "./chunk-SPP7WFWL.js";
+} from "./chunk-HEZVL2N4.js";
 import {
   CdkScrollableModule,
   ScrollDispatcher
-} from "./chunk-SPA6MZCV.js";
+} from "./chunk-JLZKG5ZC.js";
 import {
   Platform,
   coerceBooleanProperty,
   coerceNumberProperty,
   normalizePassiveListenerOptions
-} from "./chunk-6TX7CJIH.js";
+} from "./chunk-6KVH5XA6.js";
 import {
   Directionality
-} from "./chunk-AUTTC2CQ.js";
+} from "./chunk-MFBCSSD6.js";
 import {
   CommonModule,
   DOCUMENT,
   NgClass
-} from "./chunk-TEKTOLUD.js";
+} from "./chunk-4CXCO4J7.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionStrategy,
@@ -60,7 +59,6 @@ import {
   ViewEncapsulation$1,
   afterNextRender,
   inject,
-  require_operators,
   setClassMetadata,
   ɵɵStandaloneFeature,
   ɵɵadvance,
@@ -83,18 +81,14 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵviewQuery
-} from "./chunk-XWNYNQY4.js";
+} from "./chunk-YINWXC6D.js";
 import {
-  require_cjs
-} from "./chunk-VDZEJD3D.js";
-import {
+  Subject,
   __spreadValues,
-  __toESM
-} from "./chunk-NQ4HTGF6.js";
+  takeUntil
+} from "./chunk-YTR4LZ5T.js";
 
 // node_modules/@angular/material/fesm2022/tooltip.mjs
-var import_operators = __toESM(require_operators(), 1);
-var import_rxjs = __toESM(require_cjs(), 1);
 var _c0 = ["tooltip"];
 var SCROLL_THROTTLE_MS = 20;
 function getMatTooltipInvalidPositionError(position) {
@@ -246,7 +240,7 @@ var _MatTooltip = class _MatTooltip {
     this.touchGestures = "auto";
     this._message = "";
     this._passiveListeners = [];
-    this._destroyed = new import_rxjs.Subject();
+    this._destroyed = new Subject();
     this._injector = inject(Injector);
     this._scrollStrategy = scrollStrategy;
     this._document = _document;
@@ -263,7 +257,7 @@ var _MatTooltip = class _MatTooltip {
         this.touchGestures = _defaultOptions.touchGestures;
       }
     }
-    _dir.change.pipe((0, import_operators.takeUntil)(this._destroyed)).subscribe(() => {
+    _dir.change.pipe(takeUntil(this._destroyed)).subscribe(() => {
       if (this._overlayRef) {
         this._updatePosition(this._overlayRef);
       }
@@ -273,7 +267,7 @@ var _MatTooltip = class _MatTooltip {
   ngAfterViewInit() {
     this._viewInitialized = true;
     this._setupPointerEnterEventsIfNeeded();
-    this._focusMonitor.monitor(this._elementRef).pipe((0, import_operators.takeUntil)(this._destroyed)).subscribe((origin) => {
+    this._focusMonitor.monitor(this._elementRef).pipe(takeUntil(this._destroyed)).subscribe((origin) => {
       if (!origin) {
         this._ngZone.run(() => this.hide(0));
       } else if (origin === "keyboard") {
@@ -312,7 +306,7 @@ var _MatTooltip = class _MatTooltip {
     const instance = this._tooltipInstance = overlayRef.attach(this._portal).instance;
     instance._triggerElement = this._elementRef.nativeElement;
     instance._mouseLeaveHideDelay = this._hideDelay;
-    instance.afterHidden().pipe((0, import_operators.takeUntil)(this._destroyed)).subscribe(() => this._detach());
+    instance.afterHidden().pipe(takeUntil(this._destroyed)).subscribe(() => this._detach());
     this._setTooltipClass(this._tooltipClass);
     this._updateTooltipMessage();
     instance.show(delay);
@@ -348,7 +342,7 @@ var _MatTooltip = class _MatTooltip {
     }
     const scrollableAncestors = this._scrollDispatcher.getAncestorScrollContainers(this._elementRef);
     const strategy = this._overlay.position().flexibleConnectedTo(this.positionAtOrigin ? origin || this._elementRef : this._elementRef).withTransformOriginOn(`.${this._cssClassPrefix}-tooltip`).withFlexibleDimensions(false).withViewportMargin(this._viewportMargin).withScrollableContainers(scrollableAncestors);
-    strategy.positionChanges.pipe((0, import_operators.takeUntil)(this._destroyed)).subscribe((change) => {
+    strategy.positionChanges.pipe(takeUntil(this._destroyed)).subscribe((change) => {
       this._updateCurrentPositionClass(change.connectionPair);
       if (this._tooltipInstance) {
         if (change.scrollableViewProperties.isOverlayClipped && this._tooltipInstance.isVisible()) {
@@ -363,9 +357,9 @@ var _MatTooltip = class _MatTooltip {
       scrollStrategy: this._scrollStrategy()
     });
     this._updatePosition(this._overlayRef);
-    this._overlayRef.detachments().pipe((0, import_operators.takeUntil)(this._destroyed)).subscribe(() => this._detach());
-    this._overlayRef.outsidePointerEvents().pipe((0, import_operators.takeUntil)(this._destroyed)).subscribe(() => this._tooltipInstance?._handleBodyInteraction());
-    this._overlayRef.keydownEvents().pipe((0, import_operators.takeUntil)(this._destroyed)).subscribe((event) => {
+    this._overlayRef.detachments().pipe(takeUntil(this._destroyed)).subscribe(() => this._detach());
+    this._overlayRef.outsidePointerEvents().pipe(takeUntil(this._destroyed)).subscribe(() => this._tooltipInstance?._handleBodyInteraction());
+    this._overlayRef.keydownEvents().pipe(takeUntil(this._destroyed)).subscribe((event) => {
       if (this._isTooltipVisible() && event.keyCode === ESCAPE && !hasModifierKey(event)) {
         event.preventDefault();
         event.stopPropagation();
@@ -760,7 +754,7 @@ var _TooltipComponent = class _TooltipComponent {
     this._isMultiline = false;
     this._closeOnInteraction = false;
     this._isVisible = false;
-    this._onHide = new import_rxjs.Subject();
+    this._onHide = new Subject();
     this._showAnimation = "mat-mdc-tooltip-show";
     this._hideAnimation = "mat-mdc-tooltip-hide";
     this._animationsDisabled = animationMode === "NoopAnimations";
@@ -1054,4 +1048,4 @@ export {
   matTooltipAnimations,
   MatTooltipModule
 };
-//# sourceMappingURL=chunk-U3YCT2Z2.js.map
+//# sourceMappingURL=chunk-PCWH4UTS.js.map

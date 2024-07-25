@@ -11,5 +11,19 @@ table{
     width: 80% !important;
 }
 
-.gray { background-color: #898d9bb5 }
-.blue{background-color: #b9c3ebb5;}
+.gray { background-color: white }
+.blue{background-color: #e7ebfbb5;}
+
+th{
+    background-color: #d7d7d8b5;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+tr:hover{
+    background-color: #e6e6e8b5;;
+}
+
+th,td{
+    text-align: center;
+}

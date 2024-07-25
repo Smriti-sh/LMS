@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Route, ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
@@ -6,6 +6,8 @@ import { error } from 'console';
 import { Table } from '../../models/Table';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-books',
@@ -20,9 +22,14 @@ export class BooksComponent implements OnInit {
   public dataSource: any =[];
   constructor(private http: HttpClient) { }
 
+  @ViewChild(MatPaginator) paginator?: MatPaginator;
+  @ViewChild(MatSort) sort?: MatSort;
+
   ngOnInit(): void {
     this.getMethod();
     // this.postMethod();
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   public getMethod() {
@@ -32,53 +39,4 @@ export class BooksComponent implements OnInit {
       this.dataSource = data;
     });
   }
-
-  // public postMethod() {
-  //   const header = new HttpHeaders({
-  //     contentType: 'application/json'
-  //   })
-  //   let body = {
-  //     "num": 5,
-  //     "name": "english",
-  //     "author": "xyz",
-  //     "pages": 890
-  //   }
-  //   this.http.post('http://localhost:3000/api/products',body, {headers: header}).subscribe((data) => {
-  //     console.log(data);
-  //     this.postJsonValue = data;
-  //   });
-  // }
-
-  // record: Table[] = [
-  //   {
-  //     'position': 1,
-  //      'name':'Biology',
-  //      'author': 'Michael',
-  //      'pages': 300
-  //   },
-  //   {
-  //     'position': 2,
-  //      'name':'Biology',
-  //      'author': 'Michael',
-  //      'pages': 300
-  //   },
-  //   {
-  //     'position': 3,
-  //      'name':'Biology',
-  //      'author': 'Michael',
-  //      'pages': 300
-  //   },
-  //   {
-  //     'position': 4,
-  //      'name':'Biology',
-  //      'author': 'Michael',
-  //      'pages': 300
-  //   },
-  //   {
-  //     'position': 5,
-  //      'name':'Biology',
-  //      'author': 'Michael',
-  //      'pages': 300
-  //   }
-  // ];
 }

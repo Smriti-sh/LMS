@@ -1,10 +1,18 @@
+import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   Overlay,
   OverlayConfig,
   OverlayContainer,
   OverlayModule,
   OverlayRef
-} from "./chunk-IXTEBQCA.js";
+} from "./chunk-NZY4LLP7.js";
+import {
+  BasePortalOutlet,
+  CdkPortalOutlet,
+  ComponentPortal,
+  PortalModule,
+  TemplatePortal
+} from "./chunk-O2OK6YUU.js";
 import {
   A11yModule,
   ESCAPE,
@@ -12,24 +20,17 @@ import {
   FocusTrapFactory,
   InteractivityChecker,
   hasModifierKey
-} from "./chunk-Y5LMI7RH.js";
+} from "./chunk-SPP7WFWL.js";
 import {
   Platform,
   _getFocusedElementPierceShadowDom
-} from "./chunk-LR7RP53P.js";
-import {
-  BasePortalOutlet,
-  CdkPortalOutlet,
-  ComponentPortal,
-  PortalModule,
-  TemplatePortal
-} from "./chunk-DH6TAW5A.js";
+} from "./chunk-6TX7CJIH.js";
 import {
   Directionality
-} from "./chunk-MFBCSSD6.js";
+} from "./chunk-AUTTC2CQ.js";
 import {
   DOCUMENT
-} from "./chunk-4CXCO4J7.js";
+} from "./chunk-TEKTOLUD.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -48,6 +49,7 @@ import {
   ViewEncapsulation$1,
   afterNextRender,
   inject,
+  require_operators,
   setClassMetadata,
   ɵɵInheritDefinitionFeature,
   ɵɵStandaloneFeature,
@@ -62,16 +64,18 @@ import {
   ɵɵqueryRefresh,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-YINWXC6D.js";
+} from "./chunk-XWNYNQY4.js";
 import {
-  Subject,
+  require_cjs
+} from "./chunk-VDZEJD3D.js";
+import {
   __spreadValues,
-  defer,
-  of,
-  startWith
-} from "./chunk-YTR4LZ5T.js";
+  __toESM
+} from "./chunk-NQ4HTGF6.js";
 
 // node_modules/@angular/cdk/fesm2022/dialog.mjs
+var import_rxjs = __toESM(require_cjs(), 1);
+var import_operators = __toESM(require_operators(), 1);
 function CdkDialogContainer_ng_template_0_Template(rf, ctx) {
 }
 var DialogConfig = class {
@@ -407,7 +411,7 @@ var DialogRef = class {
   constructor(overlayRef, config) {
     this.overlayRef = overlayRef;
     this.config = config;
-    this.closed = new Subject();
+    this.closed = new import_rxjs.Subject();
     this.disableClose = config.disableClose;
     this.backdropClick = overlayRef.backdropClick();
     this.keydownEvents = overlayRef.keydownEvents();
@@ -504,10 +508,10 @@ var _Dialog = class _Dialog {
     this._parentDialog = _parentDialog;
     this._overlayContainer = _overlayContainer;
     this._openDialogsAtThisLevel = [];
-    this._afterAllClosedAtThisLevel = new Subject();
-    this._afterOpenedAtThisLevel = new Subject();
+    this._afterAllClosedAtThisLevel = new import_rxjs.Subject();
+    this._afterOpenedAtThisLevel = new import_rxjs.Subject();
     this._ariaHiddenElements = /* @__PURE__ */ new Map();
-    this.afterAllClosed = defer(() => this.openDialogs.length ? this._getAfterAllClosed() : this._getAfterAllClosed().pipe(startWith(void 0)));
+    this.afterAllClosed = (0, import_rxjs.defer)(() => this.openDialogs.length ? this._getAfterAllClosed() : this._getAfterAllClosed().pipe((0, import_operators.startWith)(void 0)));
     this._scrollStrategy = scrollStrategy;
   }
   open(componentOrTemplateRef, config) {
@@ -675,7 +679,7 @@ var _Dialog = class _Dialog {
         provide: Directionality,
         useValue: {
           value: config.direction,
-          change: of()
+          change: (0, import_rxjs.of)()
         }
       });
     }
@@ -826,4 +830,4 @@ export {
   Dialog,
   DialogModule
 };
-//# sourceMappingURL=chunk-F4LXZSA5.js.map
+//# sourceMappingURL=chunk-UUVU46IE.js.map

@@ -1,6 +1,6 @@
-<table 
-mat-table 
-[dataSource]="dataSource" class="mat-elevation-z8">
+<!-- <div class="table-wrapper"> -->
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 tbl">
 
     <!-- ID Column -->
     <ng-container matColumnDef="id">
@@ -31,10 +31,15 @@ mat-table
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayColumn"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayColumn;"></tr>
-    <!-- <tr mat-row *matRowDef="let row; let even = even; let odd = odd;
-    columns: displayedColumns;" 
-[ngClass]="{gray: even, blue:odd}"></tr> -->
+    <!-- <tr mat-row *matRowDef="let row; columns: displayColumn;"></tr> -->
+    <tr mat-row *matRowDef="let row; let even = even; let odd = odd;
+    columns: displayColumn;" 
+[ngClass]="{gray: even, blue:odd}"></tr>
   </table>
-  
-  
+
+<!-- </div> -->
+  <!-- <mat-paginator [length]="dataSource.data.length"
+               [pageSize]="5"
+               [pageSizeOptions]="[5, 10, 20]">
+</mat-paginator> -->
+

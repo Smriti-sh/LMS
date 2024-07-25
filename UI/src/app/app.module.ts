@@ -25,13 +25,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DataService } from './services/data.service';
 import { UsersDataSource } from './services/Users.dataSource';
+import { DrawerComponent } from './drawer/drawer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksComponent,
-    GeneratorComponent
+    GeneratorComponent,
+    DrawerComponent
   ],
   imports: [
     BrowserModule,

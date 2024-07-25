@@ -19,11 +19,11 @@ import {
 } from "./chunk-SPP7WFWL.js";
 import "./chunk-6TX7CJIH.js";
 import {
-  SelectionModel
-} from "./chunk-MDHTPDTX.js";
-import {
   Directionality
 } from "./chunk-AUTTC2CQ.js";
+import {
+  SelectionModel
+} from "./chunk-MDHTPDTX.js";
 import "./chunk-TEKTOLUD.js";
 import {
   Attribute,
