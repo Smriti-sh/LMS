@@ -1,7 +1,7 @@
 .mat-row:nth-child(even){
     background-color: red;
 }
-        
+
 .mat-row:nth-child(odd){
     background-color: black;
 }
@@ -27,3 +27,21 @@ tr:hover{
 th,td{
     text-align: center;
 }
+
+.bookAddBtn{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.bg-primary {
+    background-color: #004f9a;
+}
+
+.text-white {
+    color: white;
+}
+
+.bg-gray-900 {
+    background-color: grey;
+}
+

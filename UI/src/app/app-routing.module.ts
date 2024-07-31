@@ -5,9 +5,18 @@ import { GeneratorComponent } from './generator/generator.component';
 import { DrawerComponent } from './drawer/drawer.component';
 
 const routes: Routes = [
-  {path: 'generator',component: GeneratorComponent},
-  {path:'books', component: BooksComponent},
-  {path:'drawer', component:DrawerComponent},
+  {
+    path: 'generator',
+    component: GeneratorComponent
+  },
+  {
+    path: 'books',
+    component: BooksComponent,
+    children: [{
+      path: 'add',
+      component: DrawerComponent
+    }]
+  }
 ];
 
 @NgModule({

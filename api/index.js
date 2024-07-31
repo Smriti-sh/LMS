@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Product = require("./models/product.model.js");
 const productRoute = require("./routes/product.route.js");
+const llmRoute = require("./routes/llm.route.js");
 const cors = require('cors');
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({extended: false}));
 app.use("/api/products", productRoute);
 
 
+// app.use("/api/llm", llmRoute);
 
 
 app.get("/", (req, res) => {

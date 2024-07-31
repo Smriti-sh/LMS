@@ -28,9 +28,9 @@ mat-sidenav{
     /* width: auto; */
     align-content: center;
 }
-nav{
+.bg-primary{
     color: white;
-    background-color: rgb(57, 126, 246);
+    background-color: #004f9a;
     padding: 2px;
     display: flex;
     flex-direction: row;
@@ -104,4 +104,9 @@ label{
     align-content: center;
     flex-direction: row;
     padding: 5px;
+}
+
+.uploadArea{
+    background-color: #0f172a;
+    height: 100%;
 }

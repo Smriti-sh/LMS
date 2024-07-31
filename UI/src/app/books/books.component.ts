@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { Route, ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-books',
@@ -20,11 +21,19 @@ export class BooksComponent implements OnInit {
   // public postJsonValue: any;
   public displayColumn: string[]=['num','name','author','pages'];
   public dataSource: any =[];
-  constructor(private http: HttpClient) { }
+
+  constructor(
+    private http: HttpClient,
+    private _router: Router,
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _activatedRoute: ActivatedRoute,
+  ) { }
 
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   @ViewChild(MatSort) sort?: MatSort;
+  @ViewChild('matDrawer', { static: true }) matDrawer?: MatDrawer;
 
+  drawerMode: 'side' | 'over' = 'over';
   ngOnInit(): void {
     this.getMethod();
     // this.postMethod();
@@ -39,4 +48,16 @@ export class BooksComponent implements OnInit {
       this.dataSource = data;
     });
   }
+
+  openDrawer(): void {
+    this._router.navigate(['./add'], {
+      relativeTo: this._activatedRoute,
+    });
+
+    // Mark for check
+    this._changeDetectorRef.markForCheck();
+
+    this.matDrawer?.open();
+  }
+
 }
